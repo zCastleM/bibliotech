@@ -1,7 +1,7 @@
-#Exercício do Curso Full Stack Node e React - usando Firebase
+# Exercício do Curso Full Stack Node e React - usando Firebase
 Este repositório contém o código-fonte do exercício do curso Full Stack Node e React, no qual foi utilizada a ferramenta Firebase para implementação de banco de dados, autenticação e storage.
 
-#Tecnologias Utilizadas
+# Tecnologias Utilizadas
 Firebase (Firestore, Authentication e Storage)
 Node.js
 React
@@ -9,7 +9,7 @@ JavaScript
 HTML
 CSS
 
-#Funcionalidades
+# Funcionalidades
 Cadastro de usuários
 Login e logout de usuários
 Criação, leitura e exclusão de dados no Firestore
