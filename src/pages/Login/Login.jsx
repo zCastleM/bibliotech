@@ -1,9 +1,11 @@
+import { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import googleIcon from "../../assets/icons/google-white.svg";
 import loginImg from "../../assets/images/login.png";
+import { AuthContext } from "../../contexts/AuthContext";
 import { loginGoogle, loginEmailSenha } from "../../firebase/auth";
 
 export function Login() {
@@ -49,7 +51,10 @@ export function Login() {
         });
       });
   }
-
+    const usuarioLogado = useContext(AuthContext);
+    if (usuarioLogado !== null) {
+      return <Navigate to="/" />;
+    }
   return (
     <Container fluid className="my-5">
       <p className="text-center">
