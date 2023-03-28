@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from "./config";
 
 export async function cadastrarEmailSenha(email, senha){
@@ -20,4 +20,8 @@ export async function loginEmailSenha(email, senha){
     const resultado = await signInWithEmailAndPassword(auth, email, senha);
     
     return resultado.user;// dados do usuário
+}
+
+export async function logout(){
+    await signOut(auth);
 }
