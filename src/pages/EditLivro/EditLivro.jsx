@@ -3,7 +3,7 @@ import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
-import { addLivro, getLivro } from "../../firebase/livros";
+import { updateLivro, getLivro } from "../../firebase/livros";
 
 export function EditLivro() {
 
@@ -13,18 +13,17 @@ export function EditLivro() {
     const navigate = useNavigate();
 
     function onSubmit(data) {
-        addLivro(data).then(() => {
-            toast.success("Livro editado com sucesso!", {duration:2000, position: "bottom-right"});
-            navigate('/livros');
-          })
-        }
+        updateLivro(id, data).then(() => {
+            toast.success("Livro editado com sucesso!", {duration: 2000, position: "bottom-right"})
+            navigate("/livros");
+        })
+    }
     
         useEffect(() => {
             getLivro(id).then(livro => {
-                console.log(livro)
                 reset(livro);
             })
-        }, []);
+        }, [id, reset]);
 
     return (
         <div className="adicionar-livro">
