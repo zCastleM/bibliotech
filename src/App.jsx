@@ -11,6 +11,7 @@ import { AuthContext } from "./contexts/AuthContext";
 import { AdicionarLivro } from "./pages/AdicionarLivro/AdicionarLivro";
 import { Livros } from "./pages/Livros/Livros";
 import { EditLivro } from "./pages/EditLivro/EditLivro";
+import { AdicionarEmprestimo } from "./pages/AdicionarEmprestimo/AdicionarEmprestimo";
 
 export function App() {
   const [usuarioLogado, setUsuarioLogado] = useState(null);
@@ -33,6 +34,7 @@ export function App() {
                 <Route path="/livros" element={<Livros />} />
                 <Route path="/livros/add" element={<AdicionarLivro />} />
                 <Route path="/livros/edit/:id" element={<EditLivro />} />
+                <Route path="/emprestimos/adicionar" element={<AdicionarEmprestimo />} />
               </Route>
               <Route path="/login" element={<Login />} />
               <Route path="/cadastro" element={<Cadastro />} />
