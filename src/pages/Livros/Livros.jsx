@@ -44,6 +44,14 @@ export function Livros() {
                                 <td>{livro.categoria}</td>
                                 <td>{livro.isbn}</td>
                                 <td><img src={livro.urlCapa} width="100px" alt={livro.titulo}/></td>
+                                <td>
+                                    <Button as={Link} to={`/livros/edit/${livro.id}`} className="me-2" variant="warning" size="sm">
+                                        Editar <i className="bi bi-pencil-fill"></i>
+                                    </Button>
+                                    <Button variant="danger" size="sm">
+                                        Excluir <i className="bi bi-trash-fill"></i>
+                                    </Button>
+                                </td>
                             </tr>
                         )
                     })}

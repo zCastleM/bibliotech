@@ -10,6 +10,7 @@ import { auth } from "./firebase/config";
 import { AuthContext } from "./contexts/AuthContext";
 import { AdicionarLivro } from "./pages/AdicionarLivro/AdicionarLivro";
 import { Livros } from "./pages/Livros/Livros";
+import { EditLivro } from "./pages/EditLivro/EditLivro";
 
 export function App() {
   const [usuarioLogado, setUsuarioLogado] = useState(null);
@@ -31,6 +32,7 @@ export function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/livros" element={<Livros />} />
                 <Route path="/livros/add" element={<AdicionarLivro />} />
+                <Route path="/livros/edit/:id" element={<EditLivro />} />
               </Route>
               <Route path="/login" element={<Login />} />
               <Route path="/cadastro" element={<Cadastro />} />
