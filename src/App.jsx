@@ -12,6 +12,7 @@ import { AdicionarLivro } from "./pages/AdicionarLivro/AdicionarLivro";
 import { Livros } from "./pages/Livros/Livros";
 import { EditLivro } from "./pages/EditLivro/EditLivro";
 import { AdicionarEmprestimo } from "./pages/AdicionarEmprestimo/AdicionarEmprestimo";
+import { Emprestimos } from "./pages/Emprestimos/Emprestimos";
 
 export function App() {
   const [usuarioLogado, setUsuarioLogado] = useState(null);
@@ -32,6 +33,7 @@ export function App() {
               <Route path="/" element={<Root />}>
                 <Route path="/" element={<Home />} />
                 <Route path="/livros" element={<Livros />} />
+                <Route path="/emprestimos" element={<Emprestimos />} />
                 <Route path="/livros/add" element={<AdicionarLivro />} />
                 <Route path="/livros/edit/:id" element={<EditLivro />} />
                 <Route path="/emprestimos/adicionar" element={<AdicionarEmprestimo />} />

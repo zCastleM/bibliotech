@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import { adicionarEmprestimo } from "../../firebase/emprestimos";
 import { getLivros, getLivro } from "../../firebase/livros";
 
@@ -13,6 +14,8 @@ export function AdicionarEmprestimo() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const navigate = useNavigate();
 
   function onSubmit(data) {
     getLivro(data.idLivro).then(livro => {
@@ -28,6 +31,7 @@ export function AdicionarEmprestimo() {
           duration: 3000,
           position: "bottom-left",
         });
+        navigate("/emprestimos");
       });
     });
   }
