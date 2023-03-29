@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { Button, Container, Table } from "react-bootstrap";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { Loader } from "../../components/Loader/Loader";
 import { deleteLivro, getLivros } from "../../firebase/livros";
 
 export function Livros() {
 
-    const [livros, setLivros] = useState([]);
+    const [livros, setLivros] = useState(null);
 
     useEffect(() => {
        initializeTable();
@@ -38,6 +39,9 @@ export function Livros() {
                     </Button>
                 </div>
                 <hr />
+                {livros === null ?
+                    <Loader />
+                    : 
                 <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -70,6 +74,7 @@ export function Livros() {
                     })}
                 </tbody>
             </Table>
+            }
             </Container>
         </div>
     )
