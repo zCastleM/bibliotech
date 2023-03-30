@@ -26,3 +26,4 @@ export async function updateLivro(id, data) {
 export async function deleteLivro(id) {
   await deleteDoc(doc(livrosCollection, id));
 }
+
